@@ -45,7 +45,6 @@ public class Squirrel extends Entity implements Movable {
     public void move(char direction) {
         int newRow = this.row;
         int newCol = this.col;
-
         switch(direction) {
             case 'u': // Move up
                 newRow -= 1;
@@ -58,6 +57,9 @@ public class Squirrel extends Entity implements Movable {
                 break;
             case 'r': // Move right
                 newCol += 1;
+                break;
+            default:
+                System.out.println("Bad Input");
                 break;
         }
 

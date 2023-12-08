@@ -50,9 +50,10 @@ public abstract class Entity {
         Maze.setMaze(row,col,this);
         if(prev_Entity!=null){
             // Temporary set position for previous entity at -1;-1
-            prev_Entity.col=-1;
-            prev_Entity.col=-1;
-
+            if(!(prev_Entity instanceof Squirrel)){
+                prev_Entity.col=-1;
+                prev_Entity.col=-1;
+            }           
         }
         return prev_Entity;
     }

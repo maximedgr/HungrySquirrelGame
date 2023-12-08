@@ -139,7 +139,7 @@ public class HungrySquirrelGame {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input. Please enter a valid move (U/D/L/R).");
-                scanner.next(); // Consume the invalid input
+                scanner.nextLine(); // Consume the invalid input
             } catch (Exception e) {
                 System.out.println("An error occurred: " + e.getMessage());
                 // Optional: Decide whether to break the loop or continue

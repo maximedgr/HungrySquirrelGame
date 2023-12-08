@@ -28,6 +28,7 @@ public abstract class Entity {
     }
 
     public Entity put(int row, int col) {
+        Maze.setMaze(this.row,this.col,null);
         this.col=col;
         this.row=row;
         Entity prev_Entity = Maze.getMaze()[row][col];

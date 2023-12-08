@@ -3,7 +3,7 @@
  * @author Maxime D.
  */
 public class Peanut extends Nut {
-    protected final int NUTRITION_POINTS = 10;
+    public static final int NUTRITION_POINTS = 10;
     
     public Peanut(int row, int col){
         super('P',row,col,"Almond");

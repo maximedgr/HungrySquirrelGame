@@ -53,7 +53,8 @@ public class Maze {
     public static boolean available(int row, int col) {
         // Check if the specified position is within the maze bounds
         if (row >= 0 && row < HEIGHT && col >= 0 && col < WIDTH) {
-            return maze[row][col] == null;
+            
+            return !(maze[row][col] instanceof Wall);
         }
         return false; 
     }

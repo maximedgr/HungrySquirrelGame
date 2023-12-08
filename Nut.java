@@ -7,12 +7,14 @@ import java.util.Random;
 public abstract class Nut extends Entity {
     
     public static final int TOTAL_NUTS=5;
+    public static final int TOTAL_POISONOUS_NUTS=5;
     protected int nutritionPoints;
     protected String name;
     
     
     public Nut(char symbol, int row, int col, String name){
         super(symbol,row,col);
+        this.name=name;
     }
     
     public String getName(){

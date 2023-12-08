@@ -1,7 +1,7 @@
 /**
  *
  * @author Maxime D.
- * JAVA I - Final Project
+ * Final Project - JAVA I - UCLA
  */
 import java.util.Random;
 import java.util.Scanner;
@@ -11,6 +11,9 @@ import java.util.InputMismatchException;
 public class HungrySquirrelGame {
     public static boolean status;
     
+    /**
+    * Method. Create random nuts (Almond, Peanuts)
+    **/
     public static void createNuts() {
         Random random = new Random();
         for (int i = 0; i < Nut.TOTAL_NUTS; i++) {
@@ -20,11 +23,13 @@ public class HungrySquirrelGame {
             } else {
                 nut = new Peanut(); // 50% chance
             }
-
             nut.create(); // Randomly place the nut
         }
     }
     
+    /**
+    * Method. Create random Poisonous Nuts
+    **/
     public static void createPoisonousNuts() {
         for (int i = 0; i < Nut.TOTAL_POISONOUS_NUTS; i++) {
             Nut nut = new PoisonousCashew();
@@ -32,6 +37,9 @@ public class HungrySquirrelGame {
         }
     }
     
+    /**
+    * Method. Print an ASCII Squirrel
+    **/
     public static void printThatSquirrel(){
         System.out.println("          )\" .");
         System.out.println("         /    \\      (\\-./");
@@ -45,6 +53,9 @@ public class HungrySquirrelGame {
         System.out.println("                  `-.,),)");
     }
     
+    /**
+    * Method. Print Game Board
+    **/
     public static void printGameBoard(int point_collected, int nutleft){
         //System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         System.out.println("################## INFO #####################");
@@ -111,18 +122,16 @@ public class HungrySquirrelGame {
 
                 // 8. Check if all nuts are collected
                 if ((squirrel.totalNutsEaten == Nut.TOTAL_NUTS)) {
-                    System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-                    printGameBoard(squirrel.getPointsCollected(),Nut.TOTAL_NUTS-squirrel.totalNutsEaten);
-                    System.out.println("Squirrel successfully collected all the nuts. Total points " + squirrel.getPointsCollected());
+                    
+                    System.out.println("\n-> Squirrel successfully collected all the nuts. Total points " + squirrel.getPointsCollected());
                     System.out.println("Thank you for playing this game");
                     printThatSquirrel();
                     status = true;
                     break;
                 }
                 if(squirrel.getPointsCollected()<0){
-                    System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-                    printGameBoard(squirrel.getPointsCollected(),Nut.TOTAL_NUTS-squirrel.totalNutsEaten);
-                    System.out.println("Squirrel DIED : Score : " + squirrel.getPointsCollected());
+                    
+                    System.out.println("\n-> Squirrel DIED !! Score : " + squirrel.getPointsCollected());
                     System.out.println("Thank you for playing this game");
                     printThatSquirrel();
                     status = true;

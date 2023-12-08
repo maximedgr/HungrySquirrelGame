@@ -1,16 +1,21 @@
 /**
  *
  * @author Maxime D.
+ * Final Project - JAVA I - UCLA
  */
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
 public class Squirrel extends Entity implements Movable {
-    
     protected int pointsCollected;
     protected int totalNutsEaten;
     protected int totalPoisonousCashewEaten;
     
+    /**
+    * Method. Squirrel Constructor
+    * @param row
+    * @pram col
+    **/
     public Squirrel(int row, int col){
         super('@',row,col);
         this.pointsCollected=0;
@@ -18,6 +23,9 @@ public class Squirrel extends Entity implements Movable {
         this.totalPoisonousCashewEaten=0;
     }
     
+    /**
+    * Method. Squirrel Constructor
+    **/
     public Squirrel(){
         super('@',0,0);
         this.pointsCollected=0;
@@ -29,6 +37,10 @@ public class Squirrel extends Entity implements Movable {
         return this.pointsCollected;
     }
     
+    /**
+    * Method. Move function
+    * @param direction 
+    **/
     @Override
     public void move(char direction) {
         int newRow = this.row;
@@ -73,8 +85,11 @@ public class Squirrel extends Entity implements Movable {
         }
     }
     
+    /**
+    * Method. Cerate a Squirrel inside the maze
+    **/
     @Override
-public void create() {
+    public void create() {
     Scanner scanner = new Scanner(System.in);
     int row = -1, col = -1;
 
